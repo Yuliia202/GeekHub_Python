@@ -5,5 +5,6 @@
 tuple_list = [(1, 7, True), ("abc", 7), (0,)]
 replacing_values = input(f"Input value for replacing: ")
 for i in range(len(tuple_list)):
-    tuple_list[i] = tuple_list[i][:len(tuple_list[i]) - 1] + tuple(replacing_values)
+    if len(tuple_list[i]) > 0:
+        tuple_list[i] = tuple_list[i][:len(tuple_list[i]) - 1] + tuple(replacing_values, )
 print(f'List with replaced elements: {tuple_list}')
