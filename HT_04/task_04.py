@@ -14,12 +14,12 @@ class SpecificError(Exception):
 
 
 try:
-    raise SpecificError("This is a specific error.")
-except SpecificError as specific_error:
-    print("Caught SpecificError:", specific_error)
-
     try:
-        raise CustomError("Custom error occurred.") from specific_error
-    except CustomError as custom_error:
-        print("Caught CustomError:", custom_error)
-        print("Original Exception Message:", custom_error.__cause__)
+        raise CustomError('Custom error occurred.')
+    except CustomError as e:
+        print(f'Caught CustomError: {e}')
+        raise SpecificError (e)
+except SpecificError as  e:
+    print(f'Original Exception Message: {e}')
+
+

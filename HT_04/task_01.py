@@ -6,27 +6,36 @@
 # Виводить результат ділення першого на друге. Якщо при цьому виникає помилка -
 # оброблює її і виводить відповідне повідомлення
 
-while True:
+input_needed = True
+while input_needed:
+    text = ''
+    input1 = input("Введіть перше число: ")
+    input2 = input("Введіть друге число: ")
     try:
-        input1 = input("Введіть перше число: ")
         number1 = int(input1)
-
-        input2 = input("Введіть друге число: ")
         number2 = int(input2)
-
-        break
+        print_text = "Обидва введені значення є int"
     except ValueError:
         try:
             number1 = float(input1)
             number2 = float(input2)
-            break
+            text = "Одне з чисел float"
         except ValueError:
-            print("Помилка: Введені значення не є числами (int або float). Спробуйте ще раз.")
+            text = "Помилка: Введені значення не є числами (int або float). Спробуйте ще раз."
+    except ZeroDivisionError:
+        text = "Помилка: Ділення на нуль неможливе."
+    except Exception as e:
+        text = f"Помилка: {e}"
 
-try:
-    result = number1 / number2
-    print(f"Результат ділення: {result}")
-except ZeroDivisionError:
-    print("Помилка: Ділення на нуль неможливе.")
-except Exception as e:
-    print(f"Помилка: {e}")
+    if not text:
+        try:
+            result = number1 / number2
+            print(f"Результат ділення: {result}")
+        except ZeroDivisionError:
+            text = "Помилка: Ділення на нуль неможливе."
+        except Exception as e:
+            text = f"Помилка: {e}"
+
+    print(text)
+    if not text:
+        input_needed = False
