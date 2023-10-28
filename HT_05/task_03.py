@@ -15,7 +15,9 @@ def user_value(x, y):
         result = f"х дорiвнює y"
     return result
 
-
-x = int(input("Please enter number 1: "))
-y = int(input("Please enter value 2: "))
-print(user_value(x, y))
+try:
+    x = int(input("Введіть число 1: "))
+    y = int(input("Введіть число 2: "))
+    print(user_value(x, y))
+except ValueError:
+    print("Введені значення повинні бути цілими числами.")

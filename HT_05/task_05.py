@@ -12,18 +12,18 @@ def calculator(number1: float, operation: str, number2: float):
         result = number1 * number2
     elif operation == "/":
         if number2 == 0:
-            return "Error: devision on zero"
+            return "Error: division by zero"
         result = number1 / number2
     elif operation == "%":
         result = number1 % number2
     elif operation == "//":
         if number2 == 0:
-            return "Error: devision on zero"
-        result = number1 % number2
+            return "Error: division by zero"
+        result = number1 // number2
     elif operation == "**":
         result = number1 ** number2
     else:
-        result = "Incorrect operator"
+        return "Incorrect operator"
     return result
 
 

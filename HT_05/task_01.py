@@ -14,11 +14,9 @@ def all_season(month):
     else:
         return "Ви ввели некоректне значення"
 
-season = int(input("Введіть номер місяця: "))
-result = all_season(season)
-print(result)
 
-
-
-
-
+try:
+    season = int(input("Введіть номер місяця: "))
+    print(all_season(season))
+except ValueError:
+    print("Введено некоректне число. Введіть номер місяця від 1 до 12.")
