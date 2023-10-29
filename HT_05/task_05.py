@@ -30,4 +30,6 @@ try:
     print(calculator(number1, operation, number2))
 
 except ValueError:
-    print("Incorrect input. Please enter valid numbers.")
+    print("Incorrect input. Please enter valid values.")
+except ZeroDivisionError:
+    print("Zero division Error. Please enter valid numbers.")
