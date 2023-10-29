@@ -11,14 +11,10 @@ def calculator(number1: float, operation: str, number2: float):
     elif operation == "*":
         result = number1 * number2
     elif operation == "/":
-        if number2 == 0:
-            return "Error: division by zero"
         result = number1 / number2
     elif operation == "%":
         result = number1 % number2
     elif operation == "//":
-        if number2 == 0:
-            return "Error: division by zero"
         result = number1 // number2
     elif operation == "**":
         result = number1 ** number2
@@ -27,7 +23,11 @@ def calculator(number1: float, operation: str, number2: float):
     return result
 
 
-number1 = float(input("Enter the first number: "))
-number2 = float(input("Enter the second number: "))
-operation = input("Enter the operation (+, -, *, /, %, //, or **): ")
-print(calculator(number1, operation, number2))
+try:
+    number1 = float(input("Enter the first number: "))
+    number2 = float(input("Enter the second number: "))
+    operation = input("Enter the operation (+, -, *, /, %, //, or **): ")
+    print(calculator(number1, operation, number2))
+
+except ValueError:
+    print("Incorrect input. Please enter valid numbers.")

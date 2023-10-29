@@ -20,3 +20,6 @@ try:
     print(all_season(season))
 except ValueError:
     print("Введено некоректне число. Введіть номер місяця від 1 до 12.")
+
+
+
