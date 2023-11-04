@@ -17,7 +17,9 @@ def bank(cash, years, percents=10):
 try:
     deposit = float(input("Будь ласка, введіть суму вкладу: "))
     invest_period = int(input("Будь ласка, введіть кількість років: "))
-    result = bank(deposit, invest_period)
+    percents = int(input("Будь ласка, введіть вісоток: "))
+
+    result = bank(deposit, invest_period, percents)
     if type(result) == float:
         print(f"Сума на рахунку після {invest_period} років: {result:.2f}")
     else:

@@ -15,7 +15,7 @@ def cyclic_shift(lst, shift):
     if shift == 0:
         return lst
 
-    return lst[-shift:] + lst[:-shift] if shift > 0 else lst[-shift:] + lst[:-shift]
+    return lst[-shift:] + lst[:-shift]
 
 
 list1 = input("Please enter a list (comma-separated values): ")

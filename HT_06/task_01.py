@@ -12,5 +12,5 @@ value = float(input("Please enter value: "))
 result = square(value)
 perimeter, area, diagonal = result
 
-print(f"Perimeter: {square(value)[0]}, Area: {square(value)[1]}, Diagonal: {square(value)[2]}")
+print(f"Perimeter: {perimeter}, Area: {area}, Diagonal: {diagonal}")
 
