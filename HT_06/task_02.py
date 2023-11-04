@@ -6,12 +6,21 @@
 
 
 def bank(cash, years, percents=10):
+    if cash <= 0 or years <= 0 or percents < 0:
+        return "Некоректні вхідні дані"
+
     for i in range(years):
         cash += cash * (percents / 100)
     return cash
 
 
-deposit = float(input("Please enter cash: "))
-invest_period = int(input("Please enter years: "))
-result = bank(deposit, invest_period)
-print(f"Сума на рахунку після {invest_period} років: {result}")
+try:
+    deposit = float(input("Будь ласка, введіть суму вкладу: "))
+    invest_period = int(input("Будь ласка, введіть кількість років: "))
+    result = bank(deposit, invest_period)
+    if type(result) == float:
+        print(f"Сума на рахунку після {invest_period} років: {result:.2f}")
+    else:
+        print(result)
+except ValueError:
+    print("Помилка: введені дані мають бути числами")

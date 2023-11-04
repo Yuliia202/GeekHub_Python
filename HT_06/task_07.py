@@ -7,7 +7,7 @@
 def count_elements(my_list):
     element_count = {}
     for item in my_list:
-        if isinstance(item, (list, bool)):
+        if isinstance(item, (list, bool, dict)):
             item_str = str(item)
         else:
             item_str = item
@@ -24,5 +24,5 @@ def count_elements(my_list):
     return ', '.join(result)
 
 
-input_list = [1, 1, 'foo', [1, 2], True, 'foo', 1, [1, 2]]
+input_list = [1, 1, 'foo', [1, 2], True, 'foo', 1, [1, 2], {'key': 'value'}, {'key': 'value'}]
 print(count_elements(input_list))

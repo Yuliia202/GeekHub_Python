@@ -9,6 +9,8 @@ def square(side):
 
 
 value = float(input("Please enter value: "))
-square(value)
-print(f"Периметр: {square(value)[0]}, Площа: {square(value)[1]}, Діагональ: {square(value)[2]}")
+result = square(value)
+perimeter, area, diagonal = result
+
+print(f"Perimeter: {square(value)[0]}, Area: {square(value)[1]}, Diagonal: {square(value)[2]}")
 
