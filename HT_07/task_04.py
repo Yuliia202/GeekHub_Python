@@ -13,30 +13,27 @@
 
 def morse_code(morse_input):
     morse_code_dict = {
-        'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.',
-        'F': '..-.', 'G': '--.', 'H': '....', 'I': '..', 'J': '.---',
-        'K': '-.-', 'L': '.-..', 'M': '--', 'N': '-.', 'O': '---',
-        'P': '.--.', 'Q': '--.-', 'R': '.-.', 'S': '...', 'T': '-',
-        'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-', 'Y': '-.--',
-        'Z': '--..',
-        '0': '-----', '1': '.----', '2': '..---', '3': '...--', '4': '....-',
-        '5': '.....', '6': '-....', '7': '--...', '8': '---..', '9': '----.',
-        'SOS': '...---...',
+        '.-': 'A', '-...': 'B', '-.-.': 'C', '-..': 'D', '.': 'E',
+        '..-.': 'F', '--.': 'G', '....': 'H', '..': 'I', '.---': 'J',
+        '-.-': 'K', '.-..': 'L', '--': 'M', '-.': 'N', '---': 'O',
+        '.--.': 'P', '--.-': 'Q', '.-.': 'R', '...': 'S', '-': 'T',
+        '..-': 'U', '...-': 'V', '.--': 'W', '-..-': 'X', '-.--': 'Y',
+        '--..': 'Z',
+        '-----': '0', '.----': '1', '..---': '2', '...--': '3', '....-': '4',
+        '.....': '5', '-....': '6', '--...': '7', '---..': '8', '----.': '9',
+        '...---...': 'SOS',
     }
 
-    morse_input = morse_input.upper()
-    morse_words = morse_input.split('   ')
+    morse_input = morse_input.split('   ')
     decoded_message = []
 
-    for word in morse_words:
-        morse_letters = word.split(' ')
+    for morse_word in morse_input:
+        morse_letters = morse_word.split(' ')
         decoded_word = ''
 
         for letter in morse_letters:
-            for char, morse_code in morse_code_dict.items():
-                if letter == morse_code:
-                    decoded_word += char
-                    break
+            if letter in morse_code_dict:
+                decoded_word += morse_code_dict[letter]
 
         decoded_message.append(decoded_word)
 

@@ -39,7 +39,6 @@ def validate_credentials(login, password):
     return "OK"
 
 
-# Створіть список пар ім'я/пароль для перевірки.
 credentials_list = [
     ("vasya", "wasd"),
     ("vasya", "vasyapupkin2000"),
@@ -49,16 +48,12 @@ credentials_list = [
 ]
 
 for login, password in credentials_list:
+    print(f"Name: {login}")
+    print(f"Password: {password}")
     try:
-        login = input("Please enter your name: ")
-        password = input("Please enter your password: ")
         result = validate_credentials(login, password)
-        print(f"Name: {login}")
-        print(f"Password: {password}")
         print(f"Status: {result}")
-        print("-----")
-    except ValidationException as e:
-        print(f"Name: {login}")
-        print(f"Password: {password}")
-        print(f"Status: {e}")
-        print("-----")
+    except ValidationException as exc:
+        result = str(exc)
+        print(f"Status: {result}")
+    print("-----")
