@@ -17,7 +17,13 @@ def bank(cash, years, percents=10):
 try:
     deposit = float(input("Будь ласка, введіть суму вкладу: "))
     invest_period = int(input("Будь ласка, введіть кількість років: "))
-    percents = int(input("Будь ласка, введіть вісоток: "))
+
+    percents_input = input(
+        "Будь ласка, введіть відсоток (натисніть Enter для застосування значення за замовчуванням 10%): ")
+    if percents_input == "":
+        percents = 10
+    else:
+        percents = int(percents_input)
 
     result = bank(deposit, invest_period, percents)
     if type(result) == float:
