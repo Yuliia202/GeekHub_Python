@@ -32,3 +32,4 @@ try:
         print(result)
 except ValueError:
     print("Помилка: введені дані мають бути числами")
+
